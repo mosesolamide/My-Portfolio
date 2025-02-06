@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Lato", sans-serif;
+}
+
+/* Custom Bounce Animation */
+@keyframes customBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+/* rotate */
+@keyframes rotates{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* bounce2 */
+@keyframes bounceTwo{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px) rotate(-5deg);
+    }
+}
+
+.bounceTwo{
+    animation: bounceTwo 4s ease-in-out infinite;   
+}
+
+
+/*animation for rotate  */
+.animates{
+    animation: rotates 10s linear infinite;
+}
+
+/* animation for bounce */
+.animate-custom-bounce {
+  animation: customBounce 5s ease-in-out infinite;
+}
