@@ -1,7 +1,8 @@
 import React,{useEffect, useRef} from 'react'
 import NavBar from './component/NavBar'
 import Hero from './component/Hero'
-import { easeIn, motion,useAnimation, useInView } from 'framer-motion'
+import { motion,useAnimation, useInView } from 'framer-motion'
+import About from './component/About'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           ref={ref}
          >
             <Hero />
+            <About />
         </motion.main>
         <motion.div
           variants={{
