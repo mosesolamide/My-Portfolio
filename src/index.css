@@ -35,6 +35,7 @@
     }
 }
 
+/* animation for bounce two */
 .bounceTwo{
     animation: bounceTwo 4s ease-in-out infinite;   
 }

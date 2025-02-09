@@ -2,7 +2,10 @@ import React,{useEffect, useRef} from 'react'
 import NavBar from './component/NavBar'
 import Hero from './component/Hero'
 import { motion,useAnimation, useInView } from 'framer-motion'
-import About from './component/Project'
+import Project from './component/Project'
+import Footer from './component/Footer'
+import About from './component/About'
+import Contact from './component/Contact'
 
 
 function App() {
@@ -30,8 +33,11 @@ function App() {
           ref={ref}
          >
             <Hero />
+            <Project/>
             <About />
+            <Contact />
         </motion.main>
+        <Footer />
     </>   
   )
 }
