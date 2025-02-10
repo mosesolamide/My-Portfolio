@@ -38,9 +38,12 @@ export default function Hero(){
                     I can build responsive websites, create dynamic user interfaces, and develop modern web applications using React, JavaScript, and Tailwind CSS.
                 </p>
                 
-                <a href="#contact" className="text-white bg-blue-500 rounded-sm p-2 text-sm hover:bg-blue-600 transition duration-300 cursor-pointer">
+                <motion.a
+                    href="#contact" 
+                    className="text-white bg-blue-500 rounded-sm p-2 text-sm hover:bg-blue-600 transition duration-300 cursor-pointer"
+                 >
                     Contact Me
-                </a>
+                </motion.a>
             </motion.div>
 
             <motion.div 

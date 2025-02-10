@@ -1,13 +1,14 @@
-import { object } from 'framer-motion/client'
-import React,{useState} from 'react'
+import React,{useState, useRef, useEffect} from 'react'
+import { motion,useAnimation, useInView } from 'framer-motion'
 
-export default function Contact (){
+export default function Contact ({variants}){
  const [form,setForm] = useState({
     name:"",
     email:"",
     message:""
  })
-console.log(form)
+
+//  handlechange function keep updating the state in every changes
  const handleChange = (e) =>{
     const {value,name} = e.target
     setForm(prev => ({
@@ -16,11 +17,36 @@ console.log(form)
     }))
  }
 
+
  const submit = (e) =>{
+    // prevent the default way of submitting the form data
     e.preventDefault()
  }
+
+    const ref = useRef(null)
+    const isInView = useInView(ref,{ threshold: 1 }) //works it in view
+    const mainControl = useAnimation()
+     
+    useEffect(() =>{
+        // if isInView is true start the animation "visible"
+        if(isInView){
+           mainControl.start("visible")
+         }
+    },[isInView]) // run everytime isInView changes
     return(
-        <section id='contact'>
+        <motion.section 
+            id='contact'
+            ref={ref}
+            variants={variants}
+            initial="hidden"
+            animate={mainControl}
+            transition={{                    
+                type: "tween",
+                ease: "easeInOut",
+                duration: 2,
+                repeatType: "reverse"
+            }}
+        >
             <h5 className='font-bold text-2xl text-center'>Hire Me</h5>
             <form action="" className='mt-4 flex flex-col justify-center items-center'>
                 <div className='flex flex-col'>
@@ -71,6 +97,6 @@ console.log(form)
                     onClick={submit}
                 >Submit</button>
             </form>
-        </section>
+        </motion.section>
     )
 }

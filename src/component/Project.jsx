@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState, useRef, useEffect} from 'react'
+import { motion,useAnimation, useInView } from 'framer-motion'
 import { project } from '../ProjectData'
 
-export default function Project() {
+export default function Project({ variants }) {
     // states for is hovered?
     const [isHovered, setIsHovered] = useState(false)
     const [projectIndex,setIndex] = useState(null)
@@ -10,6 +11,16 @@ export default function Project() {
     const hovered = () =>{
         setIsHovered(true)
     }
+    const ref = useRef(null)
+    const isInView = useInView(ref,{ threshold: 1 }) //works it in view
+    const mainControl = useAnimation()
+     
+    useEffect(() =>{
+        // if isInView is true start the animation "visible"
+        if(isInView){
+           mainControl.start("visible")
+         }
+    },[isInView]) // run everytime isInView changes
 
     const listOfProject = project.map( (eachProject,index) => {
         return(
@@ -42,11 +53,23 @@ export default function Project() {
     })
 
     return(
-        <section id='projects'>
+        <motion.section
+            id='projects' 
+            ref={ref}
+            variants={variants}
+            initial="hidden"
+            animate={mainControl}
+            transition={{                    
+                type: "tween",
+                ease: "easeInOut",
+                duration: 2,
+                repeatType: "reverse"
+            }}
+         >
             <h2 className='text-3xl font-bold text-center'>Project</h2>
             <div className='grid grid-cols-[repeat(auto-fit,150px)] w-screen mt-8 justify-center px-8 md:px-10 gap-3 md:gap-6 place-items-center'>
                 {listOfProject}
             </div>
-        </section>
+        </motion.section>
     )
 }

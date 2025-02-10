@@ -1,8 +1,31 @@
-import React from 'react'
+import React,{useEffect,useRef} from 'react'
+import { motion,useAnimation, useInView } from 'framer-motion'
 
-export default function About(){
+export default function About({variants}){
+      const ref = useRef(null)
+      const isInView = useInView(ref,{ threshold: 1 }) //works it in view
+      const mainControl = useAnimation()
+    
+      useEffect(() =>{
+        // if isInView is true start the animation "visible"
+          if(isInView){
+              mainControl.start("visible")
+          }
+      },[isInView]) // run everytime isInView changes
     return(
-        <section className='max-w-2xl mx-auto p-6 text-center' id='about'>
+        <motion.section
+          ref={ref}
+          className='max-w-2xl mx-auto p-6 text-center' id='about'
+          variants={variants}
+          initial="hidden"
+          animate={mainControl}
+            transition={{                    
+              type: "tween",
+              ease: "easeInOut",
+              duration: 2,
+              repeatType: "reverse"
+          }}
+         >
             <h4 className='text-2xl mt-8 font-bold'>About Me</h4>
 
             <p className="font-bold text-sm mt-8">Hi, I'm Moses</p>
@@ -36,7 +59,7 @@ export default function About(){
             <p className="mt-6">
                When I’m not coding, you can find me exploring new tech trends, playing video games, or playing football.
             </p>
-        </section>
+        </motion.section>
     )
 }
 
