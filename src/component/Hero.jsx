@@ -14,13 +14,13 @@ export default function Hero(){
                     A Passionate <span className="text-blue-500">Web Developer</span>
                 </h2>
                 
-                <p className="text-gray-700 mt-4 text-[10px] sm:text-[11px]">
+                <p className="text-gray-700 my-4 text-[10px] sm:text-[11px]">
                     I can build responsive websites, create dynamic user interfaces, and develop modern web applications using React, JavaScript, and Tailwind CSS.
                 </p>
                 
-                <button className="text-white bg-blue-500 rounded-sm p-2 text-sm mt-4 hover:bg-blue-600 transition duration-300 cursor-pointer">
+                <a href="#contact" className="text-white bg-blue-500 rounded-sm p-2 text-sm hover:bg-blue-600 transition duration-300 cursor-pointer">
                     Contact Me
-                </button>
+                </a>
             </div>
 
             <div className=' rounded-sm p-6 '>

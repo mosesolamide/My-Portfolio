@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About(){
     return(
-        <section className='max-w-2xl mx-auto p-6 text-center'>
+        <section className='max-w-2xl mx-auto p-6 text-center' id='about'>
             <h4 className='text-2xl mt-8 font-bold'>About Me</h4>
 
             <p className="font-bold text-sm mt-8">Hi, I'm Moses</p>
@@ -21,13 +21,13 @@ export default function About(){
             <div className="mt-6">
                 <a
                     href="#projects"
-                    className="bg-blue-500 text-white px-3 md:px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+                    className="bg-blue-500 text-[10px] sm:text-[12px] md:text-sm text-white px-2 md:px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300"
                 >
                     View My Projects
                 </a>
                 <a
                     href="#contact"
-                    className="ml-4 border-2 border-blue-500 text-blue-500 px-3 md:px-6 py-3 rounded-lg hover:bg-blue-500 hover:text-white transition duration-300"
+                    className="ml-4 border-2 text-[10px] sm:text-[12px] md:text-sm border-blue-500 text-blue-500 px-3 md:px-6 py-3 rounded-lg hover:bg-blue-500 hover:text-white transition duration-300"
                 >
                     Contact Me
                 </a>
