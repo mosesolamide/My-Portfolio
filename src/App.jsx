@@ -26,8 +26,8 @@ function App() {
              hidden: {opacity: 0, y: 75},
              visible: {opacity: 1, y: 0}
           }}
-          initial="hidden"
-          animate={mainControl}
+          // initial="hidden"
+          // animate={mainControl}
           transition={{duration: 0.5, delay:0.25}}
           className='p-4 flex flex-col items-center text-[#333333]'
           ref={ref}
