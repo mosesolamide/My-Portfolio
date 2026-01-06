@@ -24,6 +24,7 @@ export default function Contact ({variants}){
  }
 
     const ref = useRef(null)
+    console.log(ref)
     const isInView = useInView(ref,{ threshold: 1 }) //works it in view
     const mainControl = useAnimation()
      

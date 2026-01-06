@@ -11,5 +11,4 @@ export const project = [
         title:"The Nature Candle",
         link:"https://the-nature-candle.netlify.app/"
     }
-    
 ]

@@ -1,5 +1,5 @@
-import React,{useEffect,useRef} from 'react'
-import { motion,useAnimation, useInView } from 'framer-motion'
+import React, { useEffect, useRef } from 'react'
+import { motion, useAnimation, useInView } from 'framer-motion'
 
 export default function About({variants}){
       const ref = useRef(null)

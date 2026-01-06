@@ -40,7 +40,7 @@ export default function Hero(){
                 
                 <motion.a
                     href="#contact" 
-                    className="text-white bg-blue-500 rounded-sm p-2 text-sm hover:bg-blue-600 transition duration-300 cursor-pointer"
+                    className="text-white bg-blue-500 rounded-sm p-2 text-sm hover:bg-blue-600 transition duration-300 cursor-pointer"  
                  >
                     Contact Me
                 </motion.a>
